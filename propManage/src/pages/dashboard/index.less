@@ -1,0 +1,140 @@
+.dashboard{
+  position: relative;
+
+  .panel {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #cccccc;
+    padding: 20px;
+    margin: 10px;
+    color: #737373;
+  }
+
+  .content {
+    font-size: 25px;
+    color: #5FA1FC;
+    font-family: 'thin';
+    margin: 3px 0px 10px 0px;
+  }
+
+  .label {
+    font-family: 'fat';
+    font-weight: 300;
+  }
+
+  .labelIcon {
+    text-align: right;
+  }
+
+  .captureImage {
+    width: 100%;
+    padding: 10px;
+    max-width: 130px;
+  }
+
+  .listHeader {
+    font-family: 'fat';
+    font-weight: 300;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 20px;
+  }
+  
+  .listRow {
+    width: 100%;
+  }
+
+  .listItem {
+    padding: 20px;
+    font-size: 17px;
+    font-weight: 300;
+    font-family: 'fat';
+  }
+
+  .listContentName {
+    padding: 10px;
+    font-size: 25px;
+    color: #5FA1FC;
+    font-family: 'thin';
+  }
+
+  .floorplanLayout {
+    background-image: url('../../images/floorplan.jpeg');
+    background-position:center;
+    height: 350px;
+    overflow: hidden;
+    width: 100%;
+
+    .twinklingAnimation {
+      animation: twinkling 1s infinite ease-in-out;
+      animation-duration: 1s; 
+      animation-fill-mode: both;
+      
+      @keyframes twinkling{ 
+        0%{ 
+        opacity: 0.2; 
+        } 
+        100%{ 
+        opacity: 1; 
+        } 
+      }
+    }
+    
+    .moveAnimation {
+      filter: hue-rotate(90deg);
+      transform: translate( 40%, 850%);
+      animation: moveH cubic-bezier(.1, .4, .8, .1);
+      animation-duration: 20s; 
+      // animation-fill-mode: both;
+      
+      @keyframes moveH{ 
+        0%{ 
+          transform: translate( 0, 300%);
+          filter: hue-rotate(0deg);
+        } 
+        30%{ 
+          transform: translate( 60%, 300%);
+          filter: hue-rotate(0deg);
+        }
+        70%{ 
+          transform: translate( 60%, 850%);
+          filter: hue-rotate(0deg);
+        }
+        99%{ 
+          transform: translate( 40%, 850%);
+          filter: hue-rotate(0deg);
+        } 
+        100%{ 
+          transform: translate( 40%, 850%);
+        } 
+      }
+    }
+  }
+
+  :global {
+    .ant-divider-horizontal{
+      margin: 5px 0px;
+    }
+
+    .ant-list-bordered .ant-list-item {
+      border-bottom: 1px solid #dddddd;
+        &:nth-child(odd){
+          background: #ffffff;
+          &:hover {
+            background: #D2E5FF;
+            border: 1px solid #5FA1FC;
+            color: #fff;
+          }
+        }
+        &:nth-child(even){
+          background:#F4F6F8;
+          &:hover {
+            background: #D2E5FF;
+            border: 1px solid #5FA1FC;
+            color: #fff;
+          }
+        }
+    }
+    
+  }
+}
